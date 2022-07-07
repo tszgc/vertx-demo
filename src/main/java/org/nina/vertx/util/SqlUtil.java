@@ -1,4 +1,4 @@
-package org.nina.vertx;
+package org.nina.vertx.util;
 
 import io.vertx.core.Future;
 import io.vertx.core.Promise;
@@ -17,7 +17,7 @@ public class SqlUtil {
         MySQLConnectOptions connectOptions = new MySQLConnectOptions()
                 .setHost("localhost")
                 .setUser("root")
-                .setPassword("root")
+                .setPassword("root@123")
                 .setPort(3306)
                 .setDatabase("vertx");
         PoolOptions poolOptions = new PoolOptions().setMaxSize(5);
