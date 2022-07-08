@@ -25,7 +25,6 @@ public class OrderDetailDaoImpl implements IOrderDetailDao {
         String sql = "select d.order_id as orderId, sum(d.price) as totalAmount, sum(d.num) as totalNum from t_order_detail d where d.order_id in (" +
                 StringUtils.join(orderIds, ",") +
                 ") group by d.order_id";
-        System.out.println(sql);
         sqlConnection.preparedQuery(sql)
                 .execute(ar -> {
                     if (ar.succeeded()) {

@@ -31,9 +31,7 @@ public class OrderDetailServiceImpl implements IOrderDetailService {
                             promise.complete(reportOrderDtos);
                             sqlConnection.close();
                         })
-                        .onFailure(throwable -> {
-                            promise.fail(throwable);
-                        });
+                        .onFailure(promise::fail);
             } else {
                 promise.fail(ar.cause());
             }
